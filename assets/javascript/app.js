@@ -15,7 +15,7 @@ var createButton = function (){
      
 	// For loop to create buttons with jquery and adds Bootstrap class as well as the the text entered into the search box and from the initial array of topics, then appends each button the the screen in the buttonSpawn div
 	for(i = 0; i < topics.length; i++) {
-		newButton = $("<button type=" + "button" + ">" + topics[i] + "</button>").addClass("btn").attr("gifText",topics[i]);
+		newButton = $("<button type=" + "button" + ">" + topics[i] + "</button>").addClass("btn btn-dark").attr("gifText",topics[i]);
 		$("#buttonSpawn").append(newButton);
 	};
 }
@@ -25,7 +25,7 @@ var createButton = function (){
 $("#buttonSpawn").on("click", ".btn", function(){
 
         //var to store the text that is associated with the button pressed
-        var userGif = $(this).attr("gifText");
+        var userGif = $(this).attr("gifText"); 
           
         // var to store the api url and api key and searches for the gif based on the buttons text
   		var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + userGif + "&api_key=xeqkOlylcwWU9J1ziZyKj7IGUOGSZ5Bo";
